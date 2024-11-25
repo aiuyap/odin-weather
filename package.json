@@ -1,10 +1,13 @@
 {
-  "name": "odin-todo-list",
+  "name": "odin-weather",
   "version": "1.0.0",
-  "description": "The Odin Project - JavaScript Course - Project: Todo List",
+  "description": "The Odin Project - JavaScript Course - Project: Weather App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
