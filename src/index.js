@@ -26,7 +26,7 @@ function displayData(forecast) {
   displayCurrentCity(forecast.resolvedAddress);
   displayCurrentDesc(forecast.description);
   displayCurrentTemp(forecast.currentConditions.temp);
-  displayCurrentDetails(forecast);
+  displayCurrentDetails(forecast.currentConditions);
 }
 
 getData("Cebu,Philippines");

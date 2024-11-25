@@ -10,16 +10,16 @@ export function displayCurrentDesc(content) {
   document.querySelector(".current-description").textContent = content;
 }
 
-export function displayCurrentDetails(forecast) {
+export function displayCurrentDetails(currentConditions) {
   document.querySelector("#details-wind-speed").textContent =
-    forecast.currentConditions.windspeed + " km/h";
+    currentConditions.windspeed + " km/h";
   document.querySelector("#details-humidity").textContent =
-    forecast.currentConditions.humidity + "%";
+    currentConditions.humidity + "%";
   document.querySelector("#details-sunrise").textContent = formatTime(
-    forecast.currentConditions.sunrise
+    currentConditions.sunrise
   );
   document.querySelector("#details-sunset").textContent = formatTime(
-    forecast.currentConditions.sunset
+    currentConditions.sunset
   );
 }
 
