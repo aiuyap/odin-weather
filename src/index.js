@@ -1,5 +1,10 @@
 import "./styles.css";
-import { displayCurrentCity, displayCurrentTemp } from "./displayController";
+import {
+  displayCurrentCity,
+  displayCurrentTemp,
+  displayCurrentDesc,
+  displayCurrentDetails,
+} from "./displayController";
 
 async function getData(location) {
   const apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=WSVCK7JA9HKPVCEEDR8C97F99&contentType=json`;
@@ -19,7 +24,9 @@ async function getData(location) {
 function displayData(forecast) {
   console.log(forecast);
   displayCurrentCity(forecast.resolvedAddress);
+  displayCurrentDesc(forecast.description);
   displayCurrentTemp(forecast.currentConditions.temp);
+  displayCurrentDetails(forecast);
 }
 
-// getData("Cebu,Philippines");
+getData("Cebu,Philippines");

@@ -43,11 +43,14 @@ body {
 
 .header {
   display: flex;
-  gap: 5rem;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 2rem 0;
   align-items: center;
+}
+
+.current-city-div {
+  width: 40rem;
 }
 
 .current-temp {
