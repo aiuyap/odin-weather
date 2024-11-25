@@ -14,14 +14,58 @@ body {
   background-color: rgb(48, 47, 47);
 }
 
-#container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
 #search-area {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 10vh 20vw 0;
+}
+
+.current-details {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-evenly;
+}
+
+.current-temp-div {
+  display: flex;
+}
+
+.current-city {
+  font-size: 3rem;
+}
+
+.header {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.current-temp {
+  font-size: 4rem;
+  align-self: center;
+}
+
+.details-item {
+  width: 12rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.details-value {
+  grid-column: 2 / 3;
+}
+
+.details-icon {
+  grid-row: 1 / 3;
 }
