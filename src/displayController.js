@@ -1,13 +1,10 @@
-export function displayCurrentCity(content) {
-  document.querySelector(".current-city").textContent = content;
-}
-
-export function displayCurrentTemp(content) {
-  document.querySelector(".current-temp").textContent = content + "°";
-}
-
-export function displayCurrentDesc(content) {
-  document.querySelector(".current-description").textContent = content;
+export function displayHeaderInfo(forecast) {
+  document.querySelector(".current-city").textContent =
+    forecast.resolvedAddress;
+  document.querySelector(".current-description").textContent =
+    forecast.description;
+  document.querySelector(".current-temp").textContent =
+    forecast.currentConditions.temp + "°";
 }
 
 export function displayCurrentDetails(currentConditions) {

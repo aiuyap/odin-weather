@@ -1,13 +1,8 @@
 import "./styles.css";
-import {
-  displayCurrentCity,
-  displayCurrentTemp,
-  displayCurrentDesc,
-  displayCurrentDetails,
-} from "./displayController";
+import { displayHeaderInfo, displayCurrentDetails } from "./displayController";
 
 async function getData(location) {
-  const apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=WSVCK7JA9HKPVCEEDR8C97F99&contentType=json`;
+  const apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&include=hours%2Ccurrent%2Cdays&key=WSVCK7JA9HKPVCEEDR8C97F99&contentType=json`;
 
   await fetch(apiURL, { mode: "cors" })
     .then((response) => {
@@ -23,9 +18,7 @@ async function getData(location) {
 
 function displayData(forecast) {
   console.log(forecast);
-  displayCurrentCity(forecast.resolvedAddress);
-  displayCurrentDesc(forecast.description);
-  displayCurrentTemp(forecast.currentConditions.temp);
+  displayHeaderInfo(forecast);
   displayCurrentDetails(forecast.currentConditions);
 }
 
