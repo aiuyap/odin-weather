@@ -6,7 +6,11 @@ import {
   getDailyForecast,
 } from "./displayController";
 
+const loader = document.querySelector("dialog");
+
 async function getData(location) {
+  loader.close();
+  loader.showModal();
   const apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?iconSet=icons2&unitGroup=metric&key=WSVCK7JA9HKPVCEEDR8C97F99&contentType=json`;
   await fetch(apiURL, { mode: "cors" })
     .then((response) => {
@@ -16,7 +20,10 @@ async function getData(location) {
       displayData(response);
     })
     .catch((error) => {
+      loader.close();
       console.log(error);
+      alert("Location not found, try adding City/Country/Zipcode");
+      document.querySelector("#search-input").value = "";
     });
 }
 
@@ -26,9 +33,10 @@ function displayData(forecast) {
   displayCurrentDetails(forecast.currentConditions);
   getHourlyForecast(forecast);
   getDailyForecast(forecast);
+  loader.close();
 }
 
-// getData("Cebu City");
+getData("Cebu City");
 
 (function searchListener() {
   const form = document
