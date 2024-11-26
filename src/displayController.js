@@ -1,3 +1,5 @@
+import { setWeatherIcon } from "./iconHandler";
+
 export function displayHeaderInfo(forecast) {
   document.querySelector(".current-city").textContent =
     forecast.resolvedAddress;
@@ -5,6 +7,7 @@ export function displayHeaderInfo(forecast) {
     forecast.description;
   document.querySelector(".current-temp").textContent =
     forecast.currentConditions.temp + "°";
+  setWeatherIcon(forecast.currentConditions.icon, "#current-temp-icon");
 }
 
 export function displayCurrentDetails(currentConditions) {
