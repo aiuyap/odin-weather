@@ -3,6 +3,7 @@ import {
   displayHeaderInfo,
   displayCurrentDetails,
   getHourlyForecast,
+  getDailyForecast,
 } from "./displayController";
 
 async function getData(location) {
@@ -24,6 +25,7 @@ function displayData(forecast) {
   displayHeaderInfo(forecast);
   displayCurrentDetails(forecast.currentConditions);
   getHourlyForecast(forecast);
+  getDailyForecast(forecast);
 }
 
 getData("Cebu City");

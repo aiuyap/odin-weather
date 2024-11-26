@@ -45,13 +45,29 @@ export function getHourlyForecast(forecast) {
   }
 }
 
-export function getDailyForecast(forecast) {}
+export function getDailyForecast(forecast) {
+  for (let i = 1; i < 6; i++) {
+    if (i === 1) {
+      document.querySelector(`#daily-day-${i}`).textContent = "Tomorrow";
+      document.querySelector(`#daily-temp-${i}`).textContent =
+        forecast.days[i].temp + "°";
+      setWeatherIcon(forecast.days[i].icon, `#daily-icon-${i}`);
+    } else {
+      document.querySelector(`#daily-day-${i}`).textContent = getDayOfTheWeek(
+        forecast.days[i].datetime
+      );
+      document.querySelector(`#daily-temp-${i}`).textContent =
+        forecast.days[i].temp + "°";
+      setWeatherIcon(forecast.days[i].icon, `#daily-icon-${i}`);
+    }
+  }
+}
 
 function getDayOfTheWeek(date) {
-  const splitDate = parseInt(date.split("-"));
-  splitDate[1]--;
+  const splitDate = date.split("-");
 
-  const day = getDay(splitDate[0], splitDate[1], splitDate[2]);
+  const day = getDay(new Date(+splitDate[0], +splitDate[1] - 1, +splitDate[2]));
+
   let dayOfWeek;
 
   switch (day) {
