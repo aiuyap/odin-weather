@@ -28,4 +28,19 @@ function displayData(forecast) {
   getDailyForecast(forecast);
 }
 
-getData("Cebu City");
+// getData("Cebu City");
+
+(function searchListener() {
+  const form = document
+    .querySelector("#search-form")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+      getLocation();
+    });
+})();
+
+function getLocation() {
+  const location = document.querySelector("#search-input").value;
+  console.log(location);
+  getData(location);
+}
