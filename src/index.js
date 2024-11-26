@@ -2,7 +2,7 @@ import "./styles.css";
 import { displayHeaderInfo, displayCurrentDetails } from "./displayController";
 
 async function getData(location) {
-  const apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&include=hours%2Ccurrent%2Cdays&key=WSVCK7JA9HKPVCEEDR8C97F99&contentType=json`;
+  const apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?iconSet=icons2&unitGroup=metric&include=hours%2Ccurrent%2Cdays&key=WSVCK7JA9HKPVCEEDR8C97F99&contentType=json`;
 
   await fetch(apiURL, { mode: "cors" })
     .then((response) => {
