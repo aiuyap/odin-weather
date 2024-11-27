@@ -4,7 +4,7 @@ import { changeUnitTemp, swapUnitOption, keepFahrenheit } from "./unitChanger";
 
 const loader = document.querySelector("dialog");
 
-// getData("Cebu City"); // default city
+getData("Cebu City"); // default city
 
 async function getData(location) {
   loader.showModal();
