@@ -1,12 +1,10 @@
 import "./styles.css";
-import {
-  displayHeaderInfo,
-  displayCurrentDetails,
-  getHourlyForecast,
-  getDailyForecast,
-} from "./displayController";
+import { displayHeaderInfo, displayCurrentDetails, getHourlyForecast, getDailyForecast } from "./displayController";
+import { changeUnitTemp, swapUnitOption, keepFahrenheit } from "./unitChanger";
 
 const loader = document.querySelector("dialog");
+
+// getData("Cebu City"); // default city
 
 async function getData(location) {
   loader.showModal();
@@ -33,21 +31,26 @@ function displayData(forecast) {
   getHourlyForecast(forecast);
   getDailyForecast(forecast);
   loader.close();
+  if (document.querySelector("#temp-current").textContent === "°F") {
+    keepFahrenheit();
+  }
 }
 
-// getData("Cebu City");
-
 (function searchListener() {
-  const form = document
-    .querySelector("#search-form")
-    .addEventListener("submit", (e) => {
-      e.preventDefault();
-      getLocation();
-    });
+  document.querySelector("#search-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    getLocation();
+  });
 })();
 
 function getLocation() {
   const location = document.querySelector("#search-input").value;
-  console.log(location);
   getData(location);
 }
+
+(function changeUnitListener() {
+  document.querySelector("#temp-option").addEventListener("click", () => {
+    changeUnitTemp();
+    swapUnitOption();
+  });
+})();
