@@ -9,7 +9,6 @@ import {
 const loader = document.querySelector("dialog");
 
 async function getData(location) {
-  loader.close();
   loader.showModal();
   const apiURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?iconSet=icons2&unitGroup=metric&key=WSVCK7JA9HKPVCEEDR8C97F99&contentType=json`;
   await fetch(apiURL, { mode: "cors" })
@@ -36,7 +35,7 @@ function displayData(forecast) {
   loader.close();
 }
 
-getData("Cebu City");
+// getData("Cebu City");
 
 (function searchListener() {
   const form = document

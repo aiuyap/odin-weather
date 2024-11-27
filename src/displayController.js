@@ -1,5 +1,8 @@
 import { setWeatherIcon } from "./iconHandler";
 import { getDay } from "date-fns";
+import hotTemp from "./images/hot-temp.png";
+import coldTemp from "./images/cold-temp.png";
+import mildTemp from "./images/mild-temp.png";
 
 export function displayHeaderInfo(forecast) {
   document.querySelector(".current-city").textContent =
@@ -9,6 +12,7 @@ export function displayHeaderInfo(forecast) {
   document.querySelector(".current-temp").textContent =
     forecast.currentConditions.temp + "°";
   setWeatherIcon(forecast.currentConditions.icon, "#current-temp-icon");
+  setBackgroundImg(forecast.currentConditions.temp);
 }
 
 export function displayCurrentDetails(currentConditions) {
@@ -110,4 +114,15 @@ function formatTime(time) {
   }
 
   return formattedTime;
+}
+
+function setBackgroundImg(temp) {
+  const bodyElement = document.querySelector("body");
+  if (temp >= 25) {
+    bodyElement.style.backgroundImage = `url(${hotTemp})`;
+  } else if (temp <= 15) {
+    bodyElement.style.backgroundImage = `url(${coldTemp})`;
+  } else {
+    bodyElement.style.backgroundImage = `url(${mildTemp})`;
+  }
 }
