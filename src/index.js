@@ -25,7 +25,6 @@ async function getData(location) {
 }
 
 function displayData(forecast) {
-  console.log(forecast);
   displayHeaderInfo(forecast);
   displayCurrentDetails(forecast.currentConditions);
   getHourlyForecast(forecast);
