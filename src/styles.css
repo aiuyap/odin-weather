@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   padding: 5vh 20vw 10vh;
   height: 100%;
+  width: 100%;
   background-color: rgba(46, 45, 45, 0.692);
 }
 
