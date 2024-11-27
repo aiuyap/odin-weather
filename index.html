@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="a6d0b7d87d2022baaf47.png" type="image/x-icon" />
+    <title>Weather App</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <dialog><div class="loader"></div></dialog>
+    <div id="container">
+      <div id="search-area">
+        <div class="dropdown">
+          <button class="dropbtn" id="temp-current">°C</button>
+          <div class="dropdown-content">
+            <a id="temp-option">°F</a>
+          </div>
+        </div>
+        <form autocomplete="off" id="search-form" spellcheck="false">
+          <input type="text" name="search-input" id="search-input" />
+          <button type="submit" id="search-btn">
+            <img src="f0caf8fde4b16382f188.svg" alt="search icon" />
+          </button>
+        </form>
+      </div>
+      <div id="content">
+        <section class="header">
+          <div class="current-city-div">
+            <p class="current-city"></p>
+            <p class="current-description"></p>
+          </div>
+          <div class="current-temp-div">
+            <p class="current-temp"></p>
+            <img id="current-temp-icon" src="#" alt="temp-icon" />
+          </div>
+        </section>
+        <section class="current-details">
+          <div class="details-item">
+            <img class="details-icon" src="f65fbe9cb8b784f97b89.svg" alt="wind" />
+            <p class="details-title">Wind Speed</p>
+            <p class="details-value" id="details-wind-speed"></p>
+          </div>
+          <div class="details-item">
+            <img class="details-icon" src="43c4ac708e11cbd8f4c4.svg" alt="humidity" />
+            <p class="details-title">Humidity</p>
+            <p class="details-value" id="details-humidity"></p>
+          </div>
+          <div class="details-item">
+            <img class="details-icon" src="4a253911a70b6753c9b6.svg" alt="sunrise" />
+            <p class="details-title">Sunrise</p>
+            <p class="details-value" id="details-sunrise"></p>
+          </div>
+          <div class="details-item">
+            <img class="details-icon" src="946e4c9fdffecdee3416.svg" alt="sunset" />
+            <p class="details-title">Sunset</p>
+            <p class="details-value" id="details-sunset"></p>
+          </div>
+        </section>
+        <section class="hourly-forecast-section">
+          <div class="section-title"><p>Hourly Forecast</p></div>
+          <div class="hourly-container">
+            <div class="hourly-items">
+              <p class="hourly-time" id="hour-0"></p>
+              <img id="hour-icon-0" src="#" alt="hourly forecast" />
+              <p class="hourly-temp" id="hour-temp-0"></p>
+            </div>
+            <div class="hourly-items">
+              <p class="hourly-time" id="hour-1"></p>
+              <img id="hour-icon-1" src="#" alt="hourly forecast" />
+              <p class="hourly-temp" id="hour-temp-1"></p>
+            </div>
+            <div class="hourly-items">
+              <p class="hourly-time" id="hour-2"></p>
+              <img id="hour-icon-2" src="#" alt="hourly forecast" />
+              <p class="hourly-temp" id="hour-temp-2"></p>
+            </div>
+            <div class="hourly-items">
+              <p class="hourly-time" id="hour-3"></p>
+              <img id="hour-icon-3" src="#" alt="hourly forecast" />
+              <p class="hourly-temp" id="hour-temp-3"></p>
+            </div>
+            <div class="hourly-items">
+              <p class="hourly-time" id="hour-4"></p>
+              <img id="hour-icon-4" src="#" alt="hourly forecast" />
+              <p class="hourly-temp" id="hour-temp-4"></p>
+            </div>
+          </div>
+        </section>
+        <section class="daily-forecast-section">
+          <div class="section-title"><p>Daily Forecast</p></div>
+          <div class="daily-container">
+            <div class="daily-items">
+              <p class="daily-day" id="daily-day-1"></p>
+              <img id="daily-icon-1" src="#" alt="daily forecast" />
+              <p class="daily-temp" id="daily-temp-1"></p>
+            </div>
+            <div class="daily-items">
+              <p class="daily-day" id="daily-day-2"></p>
+              <img id="daily-icon-2" src="#" alt="daily forecast" />
+              <p class="daily-temp" id="daily-temp-2"></p>
+            </div>
+            <div class="daily-items">
+              <p class="daily-day" id="daily-day-3"></p>
+              <img id="daily-icon-3" src="#" alt="daily forecast" />
+              <p class="daily-temp" id="daily-temp-3"></p>
+            </div>
+            <div class="daily-items">
+              <p class="daily-day" id="daily-day-4"></p>
+              <img id="daily-icon-4" src="#" alt="daily forecast" />
+              <p class="daily-temp" id="daily-temp-4"></p>
+            </div>
+            <div class="daily-items">
+              <p class="daily-day" id="daily-day-5"></p>
+              <img id="daily-icon-5" src="#" alt="daily forecast" />
+              <p class="daily-temp" id="daily-temp-5"></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
