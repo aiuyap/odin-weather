@@ -39,6 +39,7 @@ body {
 
 .current-temp-div {
   display: flex;
+  width: 191.56px;
 }
 
 .current-city {
