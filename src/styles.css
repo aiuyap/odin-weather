@@ -25,17 +25,27 @@ body {
 #container {
   display: flex;
   flex-direction: column;
-  padding: 5vh 20vw 10vh;
-  height: 100%;
-  width: 100%;
+  padding: 5vh 5vw 10vh;
+  /* height: 100%; */
+  max-width: 100vw;
   background-color: rgba(46, 45, 45, 0.692);
+}
+
+#content {
+  min-width: 300px;
 }
 
 .current-details {
   display: flex;
-  gap: 5rem;
-  justify-content: space-evenly;
+  gap: 0.5rem;
+  justify-content: center;
   flex-wrap: wrap;
+}
+.current-details div {
+  flex: 1 1 150px;
+  min-width: 150px;
+  max-width: 200px;
+  text-align: center;
 }
 
 .current-temp-div {
@@ -65,7 +75,6 @@ body {
 }
 
 .details-item {
-  width: 12rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -83,6 +92,8 @@ body {
 
 .details-title {
   align-self: end;
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 .section-title {
@@ -91,6 +102,7 @@ body {
   align-items: center;
   font-size: 2rem;
   padding: 2rem 0;
+  font-weight: 800;
 }
 
 .hourly-items,
@@ -105,6 +117,7 @@ body {
 .daily-day {
   font-size: 1.2rem;
   font-weight: 700;
+  transform: translateY(170%);
 }
 
 .hourly-container,
@@ -113,6 +126,14 @@ body {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.hourly-container div,
+.daily-container div {
+  flex: 1 1 150px;
+  min-width: 150px;
+  max-width: 200px;
+  text-align: center;
 }
 
 .hourly-temp,
@@ -124,7 +145,8 @@ body {
   background-color: rgba(128, 128, 128, 0);
   border: 2px solid white;
   padding: 0.8rem 0.5rem;
-  width: 25rem;
+  width: 50vw;
+  max-width: 25rem;
   border-radius: 15px;
   color: white;
 }
